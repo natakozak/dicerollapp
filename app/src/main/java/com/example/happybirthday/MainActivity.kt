@@ -24,10 +24,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
-        val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        val dice1 = Dice(6)
+        val diceRoll1 = dice1.roll()
+        val dice2 = Dice(6)
+        val diceRoll2 = dice2.roll()
+
+        val resultTextView1: TextView = findViewById(R.id.textView1)
+        val resultTextView2: TextView = findViewById(R.id.textView2)
+
+        resultTextView1.text = diceRoll1.toString()
+        resultTextView2.text = diceRoll2.toString()
     }
 
     class Dice(private val numSides: Int) {
