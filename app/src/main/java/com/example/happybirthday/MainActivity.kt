@@ -2,7 +2,7 @@ package com.example.happybirthday
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,16 +24,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val dice1 = Dice(6)
-        val diceRoll1 = dice1.roll()
-        val dice2 = Dice(6)
-        val diceRoll2 = dice2.roll()
-
-        val resultTextView1: TextView = findViewById(R.id.textView1)
-        val resultTextView2: TextView = findViewById(R.id.textView2)
-
-        resultTextView1.text = diceRoll1.toString()
-        resultTextView2.text = diceRoll2.toString()
+        val dice = Dice(6)
+        val diceRoll = dice.roll()
+        val diceImage: ImageView = findViewById(R.id.imageView)
+        diceImage.setImageResource(R.drawable.dice_2)
     }
 
     class Dice(private val numSides: Int) {
